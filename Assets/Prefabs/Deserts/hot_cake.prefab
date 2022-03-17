@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951d45d8eb37543b293b10ecbcaed850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSp: 10
+  _moveSp: 200
   _maxStamina: 5000
   _weight: 2
-  _attackPwr: 0
+  _bouncePwr: 0.5
 --- !u!50 &-1858562139425553023
 Rigidbody2D:
   serializedVersion: 4
@@ -117,7 +117,7 @@ Rigidbody2D:
   m_LinearDrag: 1
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 440470882119648b38d781a3de13420e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1

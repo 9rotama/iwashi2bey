@@ -30,9 +30,9 @@ public class Enemy : Bey
 
     protected override void Move()
     {
-        Vector2 diff = -transform.GetChild(0).gameObject.transform.position + target.transform.position;
+        Vector2 diff = -base._child.transform.position + target.transform.position;
         const float addPwr = 10f;
-        if(_crStamina > 0) {base._rb2d.AddForce(diff.normalized*(Vector2.one*base._moveSp),ForceMode2D.Impulse);}
+        if(_crStamina > 0) {base._rb2d.AddForce(diff.normalized*(Vector2.one*base._moveSp));}
         else base._rb2d.AddForce((Vector2.zero - _rb2d.velocity)*addPwr);
     }
 }

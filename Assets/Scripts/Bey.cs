@@ -14,13 +14,13 @@ public abstract class Bey : MonoBehaviour
     //重さ
     float _weight;
 
-    //アタック
-    float _attackPwr;
+    //弾む力
+    float _bouncePwr;
 
     //現在のスタミナ
     protected float _crStamina;
     protected Rigidbody2D _rb2d;
-    GameObject _child;
+    protected GameObject _child;
     Vector2 _prePos;
     Vector2 _crPos;
 
@@ -29,13 +29,15 @@ public abstract class Bey : MonoBehaviour
         _child =  transform.GetChild(0).gameObject;
         _rb2d = _child.GetComponent<Rigidbody2D>();
         
-
+        Debug.Log(_rb2d.sharedMaterial.bounciness);
         BeyStatus beyStatus = _child.GetComponent<BeyStatus>();
         _moveSp = beyStatus.GetMoveSp();
         _maxStamina = beyStatus.GetMaxStamina();
         _weight = _rb2d.mass = beyStatus.GetWeight();
-        _attackPwr = beyStatus.GetAttackPwr();
+        _bouncePwr = _rb2d.sharedMaterial.bounciness = beyStatus.GetBouncePwr();
         _crStamina = _maxStamina;
+        Debug.Log(_rb2d.sharedMaterial.bounciness);
+        
 
         _crPos = _prePos = _child.transform.position;
     }

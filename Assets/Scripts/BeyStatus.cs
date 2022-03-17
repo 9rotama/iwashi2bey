@@ -16,9 +16,9 @@ public class BeyStatus : MonoBehaviour
     [SerializeField] float _weight;
     public float GetWeight() => _weight;
 
-    //アタック
-    [SerializeField] float _attackPwr;
-    public float GetAttackPwr() => _attackPwr;
+    //弾む力
+    [SerializeField] float _bouncePwr;
+    public float GetBouncePwr() => _bouncePwr;
 
     //現在のスタミナ
     float _crStamina;

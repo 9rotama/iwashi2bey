@@ -18,7 +18,6 @@ public class Player : Bey
     {
         base.Rotate();
         base.DecreaseStamina();
-        //Move();
     }
 
     void Update()
@@ -28,6 +27,7 @@ public class Player : Bey
 
     protected override void Move()
     {
+
         if(Input.GetMouseButtonDown(0))
         {
             preMousePos = Input.mousePosition;
@@ -36,28 +36,19 @@ public class Player : Bey
         {
             crMousePos = Input.mousePosition;
             Vector2 diff = crMousePos - preMousePos;
-            base._rb2d.AddForce(diff*(Vector2.one*base._moveSp-_rb2d.velocity),ForceMode2D.Impulse);
+            base._rb2d.AddForce(diff*(Vector2.one*base._moveSp),ForceMode2D.Impulse);
         }
 
+        if(base._moveSp  < base._rb2d.velocity.magnitude)
+        {
+            base._rb2d.velocity = base._rb2d.velocity.normalized * base._moveSp;
+        }
+    
 
 
 
 
-        // if(Input.GetMouseButton(0))
-        // {
-        //     preMousePos = crMousePos;
-        //     crMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //     Vector2 delta = crMousePos - preMousePos;
-        //     const float addPwr = 100f;
-        //     base._rb2d.AddForce(delta*(Vector2.one*base._moveSp-_rb2d.velocity)*addPwr);
-            
-            
-        //     Debug.Log(delta);
-        // }
-        // else
-        // {
-        //     preMousePos = crMousePos = Vector2.zero;
-        // }
+
 
     }
 
