@@ -11,14 +11,14 @@ namespace Game.UI.Controller
         [SerializeField] private GameUIManager gameUIManager;
 
         private Text _textComp;
-        private Color _winColor = new Color(1.0f, 0.3f, 0.2f);
-        private Color _loseColor = new Color(0.28f, 0.25f, 1.0f);
+        private Color _winTextColor = new Color(1.0f, 0.3f, 0.2f);
+        private Color _loseTextColor = new Color(0.28f, 0.25f, 1.0f);
         
         public void Display(bool didPlayerWin)
         {
             this.gameObject.SetActive(true);
             _textComp.text = didPlayerWin ? "WIN!" : "LOSE...";
-            _textComp.color = didPlayerWin ? _winColor : _loseColor;
+            _textComp.color = didPlayerWin ? _winTextColor : _loseTextColor;
         }
         
         // Start is called before the first frame update
