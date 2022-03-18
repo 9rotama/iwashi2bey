@@ -8,8 +8,6 @@ namespace Game.UI.Controller
 {
     public class ResultController : MonoBehaviour
     {
-        [SerializeField] private GameUIManager gameUIManager;
-
         private Text _textComp;
         private Color _winTextColor = new Color(1.0f, 0.3f, 0.2f);
         private Color _loseTextColor = new Color(0.28f, 0.25f, 1.0f);

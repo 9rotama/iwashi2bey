@@ -8,19 +8,19 @@ namespace Game.UI.Controller
 {
     public class StaminaGaugeController : MonoBehaviour
     {
-        [SerializeField] private GameUIManager gameUIManager;
+        private Image _ImageComp;
 
-        private Slider _sliderComp;
-
-        public void SetValue(float staminaValue)
+        public void SetValue(float staminaRate)
         {
-            _sliderComp.value = staminaValue;
+            _ImageComp.fillAmount = staminaRate;
+            Debug.Log(_ImageComp.fillAmount);
         }
         
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
-            _sliderComp = GetComponent<Slider>();
+            _ImageComp = GetComponent<Image>();
+            _ImageComp.fillAmount = 1.0f;
         }
 
         // Update is called once per frame

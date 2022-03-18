@@ -18,13 +18,11 @@ namespace Game
 
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private GameUIManager gameUIManager;
-
         private GameState _gameState;
 
         [HideInInspector]
-        public BoolReactiveProperty isCountDownStarted { get; private set; }
-            = new BoolReactiveProperty(false);
+        public bool IsCountDownStarted { get; private set; }
+            = false;
 
         public GameState GetGameState()
         {
@@ -45,7 +43,7 @@ namespace Game
         // Start is called before the first frame update
         private void Start()
         {
-            isCountDownStarted.Value = true;
+            IsCountDownStarted = true;
             _gameState = GameState.Ready;
         }
 
