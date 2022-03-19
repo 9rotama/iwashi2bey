@@ -6,6 +6,7 @@ using Game;
 public class Player : Bey
 {
     [SerializeField] GameManager gameManager;
+    [SerializeField] DecideResult decideResult;
     Vector2 crMousePos;
     Vector2 preMousePos;
 
@@ -22,6 +23,7 @@ public class Player : Bey
         if(gameManager.GetGameState() != GameState.Ready)
         {
             base.DecreaseStamina();
+            if(CrStamina <= 0) decideResult.DeicideLoserBey(gameObject);
         }
 
     }

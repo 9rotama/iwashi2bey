@@ -6,6 +6,7 @@ using Game;
 public class Enemy : Bey
 {
     [SerializeField] GameManager gameManager;
+    [SerializeField] DecideResult decideResult;
     GameObject target;
 
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class Enemy : Bey
         if(gameManager.GetGameState() != GameState.Ready)
         {
             base.DecreaseStamina();
+            if(CrStamina <= 0) decideResult.DeicideLoserBey(gameObject);
         }
         if(gameManager.GetGameState() == GameState.Battle)
         {

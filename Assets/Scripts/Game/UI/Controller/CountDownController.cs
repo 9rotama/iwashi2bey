@@ -26,6 +26,7 @@ namespace Game.UI.Controller
         private IEnumerator CountDown()
         {
             yield return new WaitForSeconds(1);
+            GameAudioManager.PlayCountDownSe();
             _textComp.text = "3";
             yield return new WaitForSeconds(1);
             _textComp.text = "2";
