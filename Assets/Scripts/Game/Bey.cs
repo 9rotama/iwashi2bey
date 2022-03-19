@@ -9,7 +9,7 @@ public abstract class Bey : MonoBehaviour
     protected float _moveSp;
 
     //スタミナ最大値
-    float _maxStamina;
+    public float MaxStamina { get; private set; }
 
     //重さ
     float _weight;
@@ -18,7 +18,7 @@ public abstract class Bey : MonoBehaviour
     float _bouncePwr;
 
     //現在のスタミナ
-    protected float _crStamina;
+    public float CrStamina { get; private set; }
     protected Rigidbody2D _rb2d;
     protected GameObject _child;
     Vector2 _prePos;
@@ -28,15 +28,13 @@ public abstract class Bey : MonoBehaviour
     {
         _child =  transform.GetChild(0).gameObject;
         _rb2d = _child.GetComponent<Rigidbody2D>();
-        
-        Debug.Log(_rb2d.sharedMaterial.bounciness);
+
         BeyStatus beyStatus = _child.GetComponent<BeyStatus>();
         _moveSp = beyStatus.GetMoveSp();
-        _maxStamina = beyStatus.GetMaxStamina();
+        MaxStamina = beyStatus.GetMaxStamina();
         _weight = _rb2d.mass = beyStatus.GetWeight();
         _bouncePwr = _rb2d.sharedMaterial.bounciness = beyStatus.GetBouncePwr();
-        _crStamina = _maxStamina;
-        Debug.Log(_rb2d.sharedMaterial.bounciness);
+        CrStamina = MaxStamina;
         
 
         _crPos = _prePos = _child.transform.position;
@@ -49,11 +47,11 @@ public abstract class Bey : MonoBehaviour
         _prePos = _crPos;
         _crPos = _child.transform.position;
         float distance = ((_prePos-_crPos)).sqrMagnitude;
-        if(_crStamina > 0) {
-            _crStamina -= distance/10; //移動距離に応じて
-            _crStamina -= 1.0f;        //時間経過で
+        if(CrStamina > 0) {
+            CrStamina -= distance/10; //移動距離に応じて
+            CrStamina -= 1.0f;        //時間経過で
         }
-        else  _crStamina = 0;
+        else  CrStamina = 0;
     }
 
     //移動
@@ -63,6 +61,6 @@ public abstract class Bey : MonoBehaviour
     protected void Rotate()
     {
         const float rotatePwr = 3000.0f;
-        _rb2d.angularVelocity = _crStamina / _maxStamina > 0.01 ? Mathf.Pow(_crStamina / _maxStamina, 0.5f) *rotatePwr : 0;
+        _rb2d.angularVelocity = CrStamina / MaxStamina > 0.01 ? Mathf.Pow(CrStamina / MaxStamina, 0.5f) *rotatePwr : 0;
     }
 }

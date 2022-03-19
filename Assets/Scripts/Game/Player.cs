@@ -28,22 +28,21 @@ public class Player : Bey
     protected override void Move()
     {
 
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             preMousePos = Input.mousePosition;
         }
-        else if(Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && CrStamina > 0)
         {
+            const float MAX_SP = 250.0f, ADD_PWR = 0.1f;
             crMousePos = Input.mousePosition;
             Vector2 diff = crMousePos - preMousePos;
-            base._rb2d.AddForce(diff*(Vector2.one*base._moveSp),ForceMode2D.Impulse);
+            diff *= (diff.magnitude > MAX_SP) ? (MAX_SP / diff.magnitude) : 1;
+            base._rb2d.AddForce(diff * (Vector2.one * base._moveSp) * ADD_PWR, ForceMode2D.Impulse);
         }
 
-        if(base._moveSp  < base._rb2d.velocity.magnitude)
-        {
-            base._rb2d.velocity = base._rb2d.velocity.normalized * base._moveSp;
-        }
-    
+
+
 
 
 

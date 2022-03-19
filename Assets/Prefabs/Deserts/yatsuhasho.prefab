@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 977078773528989670}
   - component: {fileID: 8427338367561801743}
   - component: {fileID: 6963053002313586898}
-  - component: {fileID: 9160675036379336547}
+  - component: {fileID: 2666852909203717313}
   m_Layer: 0
   m_Name: yatsuhasho
   m_TagString: Untagged
@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951d45d8eb37543b293b10ecbcaed850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSp: 200
-  _maxStamina: 5000
-  _weight: 2
+  _moveSp: 14
+  _maxStamina: 1000
+  _weight: 1.8
   _bouncePwr: 0.5
 --- !u!50 &6963053002313586898
 Rigidbody2D:
@@ -122,8 +122,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!68 &9160675036379336547
-EdgeCollider2D:
+--- !u!60 &2666852909203717313
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -136,13 +136,17 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 32, y: 32}
+    newSize: {x: 32, y: 32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: 18.423689, y: -9.792945}
-  - {x: -17.120964, y: -10.481928}
-  - {x: -0.23658085, y: 12.448824}
-  - {x: 17.928913, y: -9.792944}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+    m_Paths:
+    - - {x: 0, y: 11.865261}
+      - {x: 17, y: -10}
+      - {x: -17, y: -10}

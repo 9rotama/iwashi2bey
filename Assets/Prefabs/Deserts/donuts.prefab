@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951d45d8eb37543b293b10ecbcaed850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSp: 200
-  _maxStamina: 5000
-  _weight: 2
+  _moveSp: 10
+  _maxStamina: 3000
+  _weight: 1.8
   _bouncePwr: 0.5
 --- !u!50 &-8725328879267925391
 Rigidbody2D:
