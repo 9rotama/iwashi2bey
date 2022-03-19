@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2851662645576156960}
   - component: {fileID: -8725328879267925391}
   - component: {fileID: 2130421082497821726}
+  - component: {fileID: -1016380842448783506}
   m_Layer: 0
   m_Name: donuts
   m_TagString: Untagged
@@ -138,3 +139,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 14
+--- !u!114 &-1016380842448783506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814995664856643977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab6103550b1c4fada9d19ed2c4f5164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
