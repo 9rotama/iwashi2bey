@@ -4,6 +4,8 @@ using Game.UI;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 using UniRx;
 using System;
@@ -18,6 +20,7 @@ namespace Game.UI
         [SerializeField] private CountDownController countDownCtrl;
         [SerializeField] private ResultController resultCtrl;
         [SerializeField] private StaminaGaugeController staminaGaugeCtrl;
+        [SerializeField] private Button returnBtn;
         
         // Start is called before the first frame update
         private void Start()
@@ -43,6 +46,11 @@ namespace Game.UI
             player.ObserveEveryValueChanged(c => c.CrStamina)
                 .Subscribe(value => {
                     staminaGaugeCtrl.SetValue(value / player.MaxStamina);
+                });
+            returnBtn.onClick.AsObservable()
+                .Subscribe(x =>
+                {
+                    SceneManager.LoadScene("BeySelectScene");
                 });
             
             

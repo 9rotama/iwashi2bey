@@ -260,6 +260,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -40}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &196799479
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4678533708524402982, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_Name
+      value: GameAudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403000, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403001, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403003, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403003, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 39.39174
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403003, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.706161
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403003, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1469.1589
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403003, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403003, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403003, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403003, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403003, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403003, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678533708524403003, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+--- !u!114 &196799480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4678533708524402980, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+  m_PrefabInstance: {fileID: 196799479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3faf859eedcc24a07a3c50d4474ae446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &202941997
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +897,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 700875592}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196799480}
+        m_TargetAssemblyTypeName: GameAudioManager, Assembly-CSharp
+        m_MethodName: PlayPushButtonSe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &700875592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,7 +1129,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 853366662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4678533708524402980, guid: 521474edefda04d648c92efd15bb058d, type: 3}
+        m_TargetAssemblyTypeName: GameAudioManager, Assembly-CSharp
+        m_MethodName: PlayPushButtonSe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &853366662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1398,7 +1498,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1416452827}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196799480}
+        m_TargetAssemblyTypeName: GameAudioManager, Assembly-CSharp
+        m_MethodName: PlayPushButtonSe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1416452827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1973,7 +2085,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1773931689}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196799480}
+        m_TargetAssemblyTypeName: GameAudioManager, Assembly-CSharp
+        m_MethodName: PlayPushButtonSe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1773931689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2094,7 +2218,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2136637090}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196799480}
+        m_TargetAssemblyTypeName: GameAudioManager, Assembly-CSharp
+        m_MethodName: PlayPushButtonSe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2136637090
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using BeySelect.UI.Controller;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 using UniRx;
 
@@ -64,6 +65,11 @@ namespace BeySelect.UI
                     if( (int) beySelectManager.EnemyBeyTmp >= BeyTypeSize - 1 ) return;
                     var nextType = (int) beySelectManager.EnemyBeyTmp + 1;
                     beySelectManager.SetEnemyBey((BeyType)nextType);
+                });
+            playBtn.onClick.AsObservable()
+                .Subscribe(x =>
+                {
+                    SceneManager.LoadScene("GameScene");
                 });
         }
 
