@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Game.UI;
 using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.Events;　
+using UnityEngine.Events;
 
 using UniRx;
 using System;
@@ -37,7 +37,7 @@ namespace Game.UI
                         gameManager.GameBegin();
                         
                         //↓デバッグ用
-                        resultCtrl.Display(true);
+                        //resultCtrl.Display(true);
                     }
                 });
             player.ObserveEveryValueChanged(c => c.CrStamina)

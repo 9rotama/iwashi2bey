@@ -41,9 +41,13 @@ public class GameAudioManager : MonoBehaviour
 
     void Awake()
     {
-        s_hitSe = _hitSe;
         s_buttonPushSe = _buttonPushSe;
+        s_hitSe = _hitSe;
+        s_winSe = _winSe;
+        s_loseSe = _loseSe;
+        s_countDownSe = _countDownSe;
         s_titleBgm = _titleBgm;
+        s_gameBgm = _gameBgm;
     }
 
     //SE
@@ -57,7 +61,6 @@ public class GameAudioManager : MonoBehaviour
         s_buttonPushSe.Play();
     }
 
-
     public static void PlayWinSe()
     {
         s_winSe.Play();
@@ -66,6 +69,11 @@ public class GameAudioManager : MonoBehaviour
     public static void PlayLoseSe()
     {
         s_loseSe.Play();
+    }
+
+    public static void PlayCountDownSe()
+    {
+        s_countDownSe.Play();
     }
 
     //BGM

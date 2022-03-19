@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Game.UI;
 using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.Events;　
+using UnityEngine.Events;
 
 using UniRx;
 
@@ -28,7 +28,6 @@ namespace Game
         {
             return _gameState;
         }
-        
         public void GameBegin()
         {
             _gameState = GameState.Battle;
@@ -38,8 +37,6 @@ namespace Game
         {
             _gameState = GameState.Result;
         }
-    
-    
         // Start is called before the first frame update
         private void Start()
         {
@@ -50,7 +47,6 @@ namespace Game
         // Update is called once per frame
         private void Update()
         {
-        
         }
     }
 }

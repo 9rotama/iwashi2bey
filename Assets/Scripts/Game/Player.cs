@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game;
 
 public class Player : Bey
 {
+    [SerializeField] GameManager gameManager;
+    [SerializeField] DecideResult decideResult;
     Vector2 crMousePos;
     Vector2 preMousePos;
 
@@ -17,12 +20,21 @@ public class Player : Bey
     void FixedUpdate()
     {
         base.Rotate();
-        base.DecreaseStamina();
+        if(gameManager.GetGameState() != GameState.Ready)
+        {
+            base.DecreaseStamina();
+            if(CrStamina <= 0) decideResult.DeicideLoserBey(gameObject);
+        }
+
     }
 
     void Update()
     {
-        Move();
+        if(gameManager.GetGameState() == GameState.Battle)
+        {
+            Move();
+        }
+       
     }
 
     protected override void Move()
