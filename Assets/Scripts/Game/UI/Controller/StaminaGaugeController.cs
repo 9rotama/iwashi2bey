@@ -26,7 +26,7 @@ namespace Game.UI.Controller
         // Update is called once per frame
         void Update()
         {
-        
+            
         }
     }
 }
