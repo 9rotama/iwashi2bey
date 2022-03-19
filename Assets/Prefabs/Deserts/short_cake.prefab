@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951d45d8eb37543b293b10ecbcaed850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSp: 10
-  _maxStamina: 5000
-  _weight: 2
-  _attackPwr: 0
+  _moveSp: 12
+  _maxStamina: 1500
+  _weight: 1.5
+  _bouncePwr: 0.5
 --- !u!60 &2418190006170887277
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ Rigidbody2D:
   m_LinearDrag: 1
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 90cda4deb703448e5ab64ed62fc47c5a, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1

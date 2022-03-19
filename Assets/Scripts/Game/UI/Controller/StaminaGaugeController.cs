@@ -13,7 +13,7 @@ namespace Game.UI.Controller
         public void SetValue(float staminaRate)
         {
             _ImageComp.fillAmount = staminaRate;
-            Debug.Log(_ImageComp.fillAmount);
+//            Debug.Log(_ImageComp.fillAmount);
         }
         
         // Start is called before the first frame update
