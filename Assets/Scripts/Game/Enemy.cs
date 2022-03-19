@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game;
 
 public class Enemy : Bey
 {
+    [SerializeField] GameManager gameManager;
     GameObject target;
 
     // Start is called before the first frame update
@@ -24,8 +26,15 @@ public class Enemy : Bey
     void FixedUpdate()
     {
         base.Rotate();
-        base.DecreaseStamina();
-        Move();
+        if(gameManager.GetGameState() != GameState.Ready)
+        {
+            base.DecreaseStamina();
+        }
+        if(gameManager.GetGameState() == GameState.Battle)
+        {
+            Move();
+        }
+
     }
 
     protected override void Move()

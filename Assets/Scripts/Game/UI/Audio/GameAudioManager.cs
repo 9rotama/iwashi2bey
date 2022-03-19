@@ -41,9 +41,13 @@ public class GameAudioManager : MonoBehaviour
 
     void Awake()
     {
-        s_hitSe = _hitSe;
         s_buttonPushSe = _buttonPushSe;
+        s_hitSe = _hitSe;
+        s_winSe = _winSe;
+        s_loseSe = _loseSe;
+        s_countDownSe = _countDownSe;
         s_titleBgm = _titleBgm;
+        s_gameBgm = _gameBgm;
     }
 
     //SE

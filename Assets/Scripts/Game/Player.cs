@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game;
 
 public class Player : Bey
 {
+    [SerializeField] GameManager gameManager;
     Vector2 crMousePos;
     Vector2 preMousePos;
 
@@ -17,12 +19,20 @@ public class Player : Bey
     void FixedUpdate()
     {
         base.Rotate();
-        base.DecreaseStamina();
+        if(gameManager.GetGameState() != GameState.Ready)
+        {
+            base.DecreaseStamina();
+        }
+
     }
 
     void Update()
     {
-        Move();
+        if(gameManager.GetGameState() == GameState.Battle)
+        {
+            Move();
+        }
+       
     }
 
     protected override void Move()
